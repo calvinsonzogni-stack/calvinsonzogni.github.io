@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calvin Sonzogni — Développeur web &amp; web designer</title>
+  <meta name="description" content="Portfolio de Calvin Sonzogni, développeur web et web designer (Bac +2) dans le Gard : Sport+, application de musculation, et CV en ligne, réalisés en HTML, CSS et JavaScript." />
+  <meta name="author" content="Calvin Sonzogni" />
+  <meta name="theme-color" content="#f5f0e8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1d1812" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Calvin Sonzogni — Développeur web &amp; web designer" />
+  <meta property="og:description" content="Sites et applications web soignés, en HTML, CSS et JavaScript." />
+  <meta property="og:image" content="img/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<!-- ══ EN-TÊTE ══════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Calvin Sonzogni — haut de page">
+      <span class="brand-mark" aria-hidden="true">CS</span>
+      <span class="brand-name">Calvin Sonzogni</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav">
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <!-- ══ INTRO ══════════════════════════════════════════════ -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Développeur web &amp; web designer · Gard</p>
+      <h1 class="hero-title">Calvin <em>Sonzogni</em></h1>
+      <p class="hero-lead">
+        Je conçois des sites et des applications web simples, rapides et soignés,
+        du premier croquis jusqu'à la mise en ligne, en <strong>HTML</strong>,
+        <strong>CSS</strong> et <strong>JavaScript</strong>.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projets">Voir mes projets</a>
+        <a class="btn btn-ghost" href="#contact">Me contacter</a>
+      </div>
+      <ul class="hero-facts">
+        <li><span>Formation</span>Bac +2 développement web &amp; web design</li>
+        <li><span>Langages</span>HTML · CSS · JavaScript</li>
+        <li><span>Basé à</span>Saint-Bonnet-du-Gard</li>
+      </ul>
+    </div>
+
+    <svg class="hero-branch" aria-hidden="true" viewBox="0 0 110 90" fill="none">
+      <path d="M 95 85 Q 60 60 30 20" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M 75 70 Q 62 58 70 48" stroke="currentColor" stroke-width=".8"/>
+      <ellipse cx="70" cy="47" rx="7" ry="3" class="leaf" transform="rotate(-30 70 47)"/>
+      <path d="M 60 58 Q 46 50 52 40" stroke="currentColor" stroke-width=".8"/>
+      <ellipse cx="52" cy="39" rx="7" ry="3" class="leaf leaf-dark" transform="rotate(-15 52 39)"/>
+      <path d="M 48 46 Q 35 42 40 30" stroke="currentColor" stroke-width=".8"/>
+      <ellipse cx="40" cy="29" rx="7" ry="2.5" class="leaf" transform="rotate(10 40 29)"/>
+      <path d="M 35 33 Q 22 30 26 18" stroke="currentColor" stroke-width=".8"/>
+      <ellipse cx="26" cy="17" rx="6" ry="2.5" class="leaf leaf-dark" transform="rotate(20 26 17)"/>
+      <circle cx="68" cy="55" r="2.5" class="olive"/>
+      <circle cx="50" cy="43" r="2" class="olive"/>
+    </svg>
+  </section>
+
+  <!-- ══ PROJETS ════════════════════════════════════════════ -->
+  <section class="section" id="projets" aria-labelledby="projets-titre">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="section-label">Projets</p>
+        <h2 id="projets-titre" class="section-title">Ce que j'ai construit</h2>
+      </header>
+
+      <!-- Sport+ -->
+      <article class="project">
+        <div class="project-media project-media--dark">
+          <figure class="frame-browser">
+            <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <img src="img/sportplus-desktop.webp" width="1280" height="800" loading="lazy" decoding="async"
+                 alt="Sport+ sur ordinateur : grille d'exercices illustrés, filtrés par muscle, avec trois exercices sélectionnés." />
+          </figure>
+          <figure class="frame-phone">
+            <img src="img/sportplus-mobile.webp" width="420" height="840" loading="lazy" decoding="async"
+                 alt="Sport+ sur téléphone : séance en cours avec chrono et saisie des séries (répétitions et charge)." />
+          </figure>
+        </div>
+
+        <div class="project-body">
+          <p class="project-index">01 · Application web</p>
+          <h3 class="project-title">Sport+</h3>
+          <p class="project-desc">
+            Une application de musculation pensée pour le téléphone, à la salle :
+            on compose sa séance, on la suit série par série, et on voit sa progression.
+          </p>
+          <ul class="project-points">
+            <li>Séance en deux temps : choix des exercices, puis suivi des séries (répétitions × charge) avec chrono.</li>
+            <li>Planning mensuel, séances hebdomadaires et rappel le jour J.</li>
+            <li>Historique, records personnels et graphiques de progression.</li>
+            <li>Aucun compte ni serveur : tout reste dans le navigateur, et une séance en cours est reprise automatiquement.</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>LocalStorage</li><li>Chart.js</li><li>Netlify</li>
+          </ul>
+          <a class="link-arrow" href="https://github.com/calvinsonzogni-stack/sportplus-app">
+            Voir le code sur GitHub <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- CV en ligne -->
+      <article class="project project--reverse">
+        <div class="project-media project-media--sand">
+          <figure class="frame-browser">
+            <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <img src="img/cv-desktop.webp" width="1280" height="800" loading="lazy" decoding="async"
+                 alt="CV en ligne sur ordinateur : en-tête brun, frise d'épis de blé, colonnes langues et expériences." />
+          </figure>
+          <figure class="frame-phone">
+            <img src="img/cv-mobile.webp" width="420" height="840" loading="lazy" decoding="async"
+                 alt="CV en ligne sur téléphone : mise en page sur une colonne." />
+          </figure>
+        </div>
+
+        <div class="project-body">
+          <p class="project-index">02 · Site vitrine</p>
+          <h3 class="project-title">CV en ligne</h3>
+          <p class="project-desc">
+            Un CV conçu comme une page web, avec une vraie identité :
+            un thème « campagne » aux tons nude, inspiré du Gard.
+          </p>
+          <ul class="project-points">
+            <li>Direction artistique complète : palette, typographies Cormorant &amp; Jost, motifs SVG d'épis et d'olivier.</li>
+            <li>Mise en page responsive, du grand écran au téléphone.</li>
+            <li>Impression et export PDF sur une seule page A4, couleurs conservées.</li>
+            <li>Contrastes conformes aux recommandations d'accessibilité (WCAG AA).</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>HTML</li><li>CSS</li><li>SVG</li><li>Responsive</li><li>Print CSS</li>
+          </ul>
+          <a class="link-arrow" href="https://github.com/calvinsonzogni-stack/CV_Calvinsonzogni">
+            Voir le code sur GitHub <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══ PARCOURS ═══════════════════════════════════════════ -->
+  <section class="section section--alt" id="parcours" aria-labelledby="parcours-titre">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="section-label">Parcours</p>
+        <h2 id="parcours-titre" class="section-title">Du terrain à l'écran</h2>
+        <p class="section-intro">
+          Avant le code, il y a eu la carrière de pierre et le service en salle :
+          deux métiers exigeants qui m'ont appris la rigueur, la précision
+          et le sens du contact. Je les garde dans ma façon de travailler.
+        </p>
+      </header>
+
+      <div class="parcours-grid">
+        <div>
+          <h3 class="col-title">Expériences</h3>
+          <ol class="timeline">
+            <li>
+              <p class="tl-meta">2 mois · Restauration</p>
+              <p class="tl-title">Serveur</p>
+              <p class="tl-place">Les Terrasses du Pont du Gard, Vers-Pont-du-Gard</p>
+              <p class="tl-desc">Accueil, prise de commandes, service à table et encaissement, en équipe, en pleine affluence saisonnière.</p>
+            </li>
+            <li>
+              <p class="tl-meta">1 an et demi · BTP / Extraction</p>
+              <p class="tl-title">Extracteur de pierre polyvalent</p>
+              <p class="tl-place">SOC Carrière de Provence, Gard</p>
+              <p class="tl-desc">Extraction et taille de pierre, conduite d'équipements, gestes techniques précis et respect strict des consignes de sécurité.</p>
+            </li>
+          </ol>
+
+          <h3 class="col-title">Formation</h3>
+          <ol class="timeline">
+            <li>
+              <p class="tl-meta">Bac +2</p>
+              <p class="tl-title">Développement web &amp; web design</p>
+              <p class="tl-desc">HTML, CSS, JavaScript, création d'interfaces et culture du design.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 class="col-title">Compétences</h3>
+          <dl class="skills">
+            <div>
+              <dt>Développement</dt>
+              <dd>HTML sémantique, CSS (responsive, animations, impression), JavaScript sans framework, stockage local, graphiques avec Chart.js.</dd>
+            </div>
+            <div>
+              <dt>Design</dt>
+              <dd>Identité visuelle, choix typographiques et de couleurs, interfaces pensées pour le mobile, accessibilité.</dd>
+            </div>
+            <div>
+              <dt>Outils</dt>
+              <dd>Git &amp; GitHub, déploiement Netlify.</dd>
+            </div>
+          </dl>
+
+          <h3 class="col-title">Langues</h3>
+          <ul class="langs">
+            <li><span>Français</span><span>natif</span></li>
+            <li><span>Anglais</span><span>intermédiaire</span></li>
+            <li><span>Espagnol, allemand, italien</span><span>notions</span></li>
+          </ul>
+
+          <h3 class="col-title">À côté</h3>
+          <p class="aside-text">
+            <strong>13 ans de judo</strong>, jusqu'à la ceinture marron.
+            J'aime aussi la musique et tout ce qui touche à l'informatique.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ════════════════════════════════════════════ -->
+  <section class="section contact" id="contact" aria-labelledby="contact-titre">
+    <div class="wrap contact-inner">
+      <p class="section-label section-label--center">Contact</p>
+      <h2 id="contact-titre" class="contact-title">Travaillons <em>ensemble</em></h2>
+      <p class="contact-text">
+        Une opportunité, un projet de site ou une simple question ?
+        Écrivez-moi.
+      </p>
+      <a class="contact-mail" href="mailto:calvinsonzogni@gmail.com">calvinsonzogni@gmail.com</a>
+      <p class="contact-alt">
+        Ou retrouvez mon code sur
+        <a href="https://github.com/calvinsonzogni-stack">GitHub</a>.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>Calvin Sonzogni · Saint-Bonnet-du-Gard</p>
+    <p>Fait en HTML &amp; CSS, sans framework.</p>
+  </div>
+</footer>
+
+</body>
+</html>
