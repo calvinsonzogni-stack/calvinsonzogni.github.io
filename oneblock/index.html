@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneBlock Online Wiki</title>
+<meta name="description" content="Tuto/wiki facile et rapide pour le serveur Minecraft Bedrock OneBlock Online.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛏️</text></svg>">
+<!-- Aperçu du lien quand on le partage (Discord, WhatsApp, Messenger…) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="OneBlock Online · le wiki facile">
+<meta property="og:description" content="Le tuto rapide du serveur Minecraft Bedrock OneBlock Online : démarrer, phases, quêtes, minions, combat et checklist.">
+<meta property="og:url" content="https://calvinsonzogni-stack.github.io/calvinsonzogni.github.io/oneblock/">
+<style>
+:root {
+  --bg: #eef5e8; --card: #ffffff; --text: #1d2a1a; --muted: #5b6b56;
+  --accent: #3f8f2e; --accent-2: #2f6fb0; --dirt: #8b5a2b; --line: #d6e3cc;
+  --tldr: #fff6d6; --off: #e6f0ff; --tip: #eef9e8; --on-accent: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111811; --card: #1a241a; --text: #e8f0e3; --muted: #a3b39c;
+    --accent: #7cd65c; --accent-2: #7fb8f0; --dirt: #d39a5f; --line: #2c3a2b;
+    --tldr: #3a3418; --off: #18263a; --tip: #1d2f1a; --on-accent: #10200c;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 130px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--text); font: 18px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+[hidden] { display: none !important; }
+a { color: var(--accent-2); }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 12px; padding: 10px 14px; background: var(--accent); color: var(--on-accent); font-weight: 700; }
+button.ghost { background: transparent; color: var(--text); border: 2px solid var(--line); }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+
+header { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 2px solid var(--line); padding: 10px 16px; }
+.top { max-width: 820px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.top h1 { font-size: 1.25rem; margin: 0 auto 0 0; }
+.top input { flex: 1 1 100%; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--line); background: var(--card); color: var(--text); font: inherit; }
+nav { max-width: 820px; margin: 8px auto 0; display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; }
+@media (max-width: 600px) { header { position: static; } html { scroll-padding-top: 0; } }
+nav a { white-space: nowrap; text-decoration: none; background: var(--card); border: 2px solid var(--line); border-radius: 999px; padding: 4px 12px; color: var(--text); font-size: .9rem; }
+
+main { max-width: 820px; margin: 0 auto; padding: 16px; }
+#next-msg { background: var(--tldr); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; font-size: 1.05rem; }
+.legend { color: var(--muted); font-size: .9rem; margin: 0 0 16px; }
+
+section { background: var(--card); border: 2px solid var(--line); border-radius: 18px; padding: 18px 20px; margin-bottom: 18px; }
+section h2 { margin: 0 0 8px; font-size: 1.4rem; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.time { font-size: .8rem; font-weight: 600; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; }
+.tldr { background: var(--tldr); border-radius: 12px; padding: 10px 14px; font-weight: 700; margin: 8px 0 12px; }
+ul.facts { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+ul.facts li { padding: 8px 12px; border-radius: 10px; }
+li.off { background: var(--off); }
+li.tip { background: var(--tip); }
+li.off::before { content: "📌 "; }
+li.tip::before { content: "💡 "; }
+details { margin-top: 10px; }
+summary { cursor: pointer; font-weight: 700; color: var(--accent-2); }
+
+ol.steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 10px; }
+ol.steps li { counter-increment: s; position: relative; padding-left: 48px; min-height: 36px; }
+ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: var(--on-accent); font-weight: 800; display: grid; place-items: center; }
+.play { display: inline-block; margin: 6px 0; padding: 10px 16px; border-radius: 12px; background: var(--dirt); color: #fff; font-weight: 800; text-decoration: none; }
+
+.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 12px 0; }
+.flow span { background: var(--off); border-radius: 10px; padding: 6px 10px; font-weight: 700; font-size: .95rem; }
+.flow b { color: var(--muted); }
+
+.bar { height: 14px; background: var(--line); border-radius: 999px; overflow: hidden; margin: 8px 0; }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+.phase { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.phase strong { font-size: 2rem; min-width: 2ch; text-align: center; }
+
+#checklist label { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; border-radius: 10px; cursor: pointer; }
+#checklist label:hover { background: var(--tip); }
+#checklist input { width: 22px; height: 22px; margin-top: 3px; accent-color: var(--accent); flex: none; }
+#checklist input:checked + span { text-decoration: line-through; color: var(--muted); }
+
+.plan { display: grid; gap: 10px; }
+.plan div { border-left: 6px solid var(--accent); padding: 6px 12px; background: var(--tip); border-radius: 0 10px 10px 0; }
+
+#toast { position: fixed; left: 50%; bottom: 80px; transform: translate(-50%, 40px); opacity: 0; background: var(--accent); color: var(--on-accent); font-weight: 800; padding: 10px 18px; border-radius: 999px; transition: .25s; pointer-events: none; z-index: 9; }
+#toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+/* Mode focus : une seule section à la fois */
+#focusbar { display: none; }
+body.focus main > section:not(.current) { display: none; }
+body.focus #focusbar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; justify-content: center; align-items: center; gap: 12px; padding: 10px 16px; background: var(--bg); border-top: 2px solid var(--line); }
+body.focus main { padding-bottom: 90px; }
+footer { max-width: 820px; margin: 0 auto; padding: 0 16px 40px; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="top">
+    <h1>⛏️ OneBlock Online · le wiki facile</h1>
+    <button id="next">🎯 Je fais quoi maintenant ?</button>
+    <button id="focus" class="ghost" aria-pressed="false">🧘 Mode focus</button>
+    <input id="q" type="search" placeholder="🔎 Cherche un truc (minions, PvP, quêtes…)" aria-label="Rechercher dans le wiki">
+  </div>
+  <nav aria-label="Sections">
+    <a href="#start">🚀 Démarrer</a><a href="#oneblock">⛏️ Phases</a><a href="#quetes">📜 Quêtes</a>
+    <a href="#coop">🤝 Coop</a><a href="#minions">🤖 Minions</a><a href="#combat">⚔️ Combat</a>
+    <a href="#eco">💰 Économie</a><a href="#deco">🎨 Déco</a><a href="#plan">🧠 Plan</a>
+    <a href="#checklist">✅ Checklist</a><a href="#faq">❓ FAQ</a><a href="#sources">🔗 Sources</a>
+  </nav>
+</header>
+
+<main>
+  <div id="next-msg" role="status" aria-live="polite" hidden></div>
+  <p class="legend">📌 = officiel (Minecraft.net / InPvP) · 💡 = astuce générale, à tester en jeu · ⏱ = temps de lecture</p>
+  <p id="nohit" hidden>😕 Rien trouvé. Essaie un autre mot (ex : « île », « XP », « vendre »).</p>
+
+  <section id="start">
+    <h2>🚀 Démarrer en 3 étapes <span class="time">⏱ 30 s</span></h2>
+    <div class="tldr">Minecraft Bedrock → Jouer → Serveurs → OneBlock Online.</div>
+    <ol class="steps">
+      <li>Ouvre Minecraft <b>Bedrock</b> (PC Windows, mobile ou console). Pas Java !</li>
+      <li>Clique sur <b>Jouer</b>, puis sur l'onglet <b>Serveurs</b>.</li>
+      <li>Choisis <b>OneBlock Online</b> → <b>Rejoindre</b>. C'est tout 🎉</li>
+    </ol>
+    <a class="play" href="minecraft://joinExperience?experienceId=b7f5596c-e811-49ec-b318-80ff3c435d1d">▶ Lancer direct dans Minecraft</a>
+    <p class="legend">Le bouton marche si Minecraft Bedrock est installé sur cet appareil. Sinon, fais les 3 étapes.</p>
+    <ul class="facts">
+      <li class="off">Mode mis en avant par Minecraft, géré par <b>InPvP</b>. Dispo depuis le 30 juillet 2026.</li>
+      <li class="tip">Il faut un compte Microsoft (gratuit). Sur console, un abonnement en ligne peut être demandé selon la plateforme.</li>
+    </ul>
+  </section>
+
+  <section id="oneblock">
+    <h2>⛏️ Le OneBlock &amp; les phases <span class="time">⏱ 40 s</span></h2>
+    <div class="tldr">Tu casses UN bloc qui revient toujours. Plus tu casses, plus tu avances de phase, plus le butin est rare.</div>
+    <ul class="facts">
+      <li class="off"><b>29 phases</b> au lancement, chacune avec un meilleur butin. D'autres phases, blocs et objets arriveront (le site InPvP annonce déjà « 30+ »).</li>
+      <li class="off">Une île peut avoir <b>plusieurs OneBlocks</b>.</li>
+      <li class="tip">La liste exacte des phases n'est pas publique : regarde en jeu, et note ta phase ci-dessous pour suivre ta progression.</li>
+      <li class="tip">Avant de casser en boucle, pose quelques blocs autour du OneBlock : tu ne tombes pas, et tes objets non plus.</li>
+    </ul>
+    <div class="phase">
+      <button id="ph-minus" class="ghost" aria-label="Phase précédente">−</button>
+      <div>Ma phase : <strong id="phase">1</strong> <span class="legend">sur 29+</span></div>
+      <button id="ph-plus" aria-label="Phase suivante">+</button>
+    </div>
+    <div class="bar"><i id="phase-bar"></i></div>
+  </section>
+
+  <section id="quetes">
+    <h2>📜 Quêtes &amp; améliorations <span class="time">⏱ 30 s</span></h2>
+    <div class="tldr">Quêtes du jour + de la semaine = XP. L'XP achète des améliorations d'île PERMANENTES.</div>
+    <ul class="facts">
+      <li class="off">Améliorations : <b>taille de l'île</b>, <b>cultures qui poussent plus vite</b>, <b>meilleurs spawners</b>, et d'autres.</li>
+      <li class="tip">Routine anti-flemme : 1 session = 1 quête journalière. Petit, mais chaque jour.</li>
+      <li class="tip">Prends d'abord ce qui rapporte en continu (cultures, spawners). La taille, quand tu manques de place.</li>
+    </ul>
+  </section>
+
+  <section id="coop">
+    <h2>🤝 Îles &amp; coop <span class="time">⏱ 20 s</span></h2>
+    <div class="tldr">Joue seul ou invite tes potes sur ton île.</div>
+    <ul class="facts">
+      <li class="off">Tu peux avoir <b>plusieurs îles</b>.</li>
+      <li class="off">Invite des amis pour bosser ensemble, et va aider sur leurs îles.</li>
+      <li class="tip">Répartissez les rôles : un qui mine, un qui farme, un qui combat.</li>
+      <li class="tip">N'invite que des gens de confiance : ils peuvent toucher à ton île.</li>
+    </ul>
+  </section>
+
+  <section id="minions">
+    <h2>🤖 Minions &amp; automatisation <span class="time">⏱ 40 s</span></h2>
+    <div class="tldr">Les minions bossent pour toi pendant que tu pars à l'aventure.</div>
+    <ul class="facts">
+      <li class="off">Minions = assistants <b>améliorables</b> et <b>personnalisables</b> : farmer, couper du bois, récolter, tuer des mobs.</li>
+      <li class="off">Fais des chaînes de production avec les <b>chunk hoppers</b>, les <b>coffres d'auto-craft</b> et les <b>coffres d'auto-vente</b>.</li>
+    </ul>
+    <div class="flow" aria-label="Exemple de chaîne de production">
+      <span>🤖 Minion</span><b>➜</b><span>🕳️ Chunk hopper</span><b>➜</b><span>🛠️ Auto-craft</span><b>➜</b><span>💰 Auto-vente</span>
+    </div>
+    <ul class="facts">
+      <li class="tip">Exemple d'idée : minion bûcheron → le chunk hopper ramasse le bois → l'auto-craft fait des planches → l'auto-vente vend.</li>
+      <li class="tip">Installe l'automatisation <b>avant</b> de partir combattre : ton île gagne pendant ton absence.</li>
+    </ul>
+  </section>
+
+  <section id="combat">
+    <h2>⚔️ Combat : îles de monstres &amp; PvP <span class="time">⏱ 40 s</span></h2>
+    <div class="tldr">Besoin de plus de butin ? Île de monstres (contre des monstres) ou arène PvP (contre des joueurs).</div>
+    <ul class="facts">
+      <li class="off"><b>Îles de monstres</b> : monstres custom et boss, de plus en plus durs, avec des butins rares.</li>
+      <li class="off">Le PvP se passe dans une <b>arène dédiée</b>.</li>
+      <li class="off">Améliore ton équipement avec les ressources gagnées : <b>Bone Forge</b> (forge d'os), <b>enchantements custom</b>, <b>effets de set d'armure</b>.</li>
+      <li class="tip">Commence par l'île de monstres la plus facile, seul ou en équipe.</li>
+      <li class="tip">Avant le PvP, range tes objets précieux dans un coffre, au cas où.</li>
+    </ul>
+  </section>
+
+  <section id="eco">
+    <h2>💰 Économie, classements &amp; événements <span class="time">⏱ 30 s</span></h2>
+    <div class="tldr">Les joueurs font les prix. Il y a des classements avec récompenses et des événements serveur.</div>
+    <ul class="facts">
+      <li class="off">Économie <b>entre joueurs</b> (marché d'objets visible aussi sur le site InPvP).</li>
+      <li class="off"><b>Classements</b> avec récompenses.</li>
+      <li class="off">Événements serveur : récompenses de <b>pêche</b>, <b>double XP</b>, <b>compétitions PvP</b>.</li>
+      <li class="tip">Pendant un double XP : fonce sur les quêtes.</li>
+      <li class="tip">Compare les prix du marché avant de vendre, pour ne pas brader.</li>
+      <li class="tip">Anti-arnaque : ne donne jamais ton mot de passe, et passe par les systèmes du jeu pour échanger.</li>
+    </ul>
+  </section>
+
+  <section id="deco">
+    <h2>🎨 Déco &amp; cosmétiques <span class="time">⏱ 20 s</span></h2>
+    <div class="tldr">Fais une île qui te ressemble.</div>
+    <ul class="facts">
+      <li class="off">Boutique de meubles : <b>plus de 1000 objets</b>, plus des meubles saisonniers qui changent.</li>
+      <li class="off">Cosmétiques : titres et couleurs de chat, pins, ailes, chapeaux… et des pets.</li>
+      <li class="off">Des packs payants (en Minecoins) existent. Tu peux très bien jouer sans.</li>
+    </ul>
+  </section>
+
+  <section id="plan">
+    <h2>🧠 Plan de jeu débutant <span class="time">⏱ 1 min</span></h2>
+    <div class="tldr">Fais ça dans l'ordre. Une étape à la fois, pas besoin de tout lire.</div>
+    <div class="plan">
+      <div><b>1. Survie (10 min)</b> : casse le OneBlock, pose des blocs autour, plante tes pousses d'arbres, pose un coffre.</div>
+      <div><b>2. Routine</b> : fais une quête journalière → achète ta 1ʳᵉ amélioration avec l'XP.</div>
+      <div><b>3. Farm</b> : lance une petite ferme (graines, arbres), invite un pote si tu veux.</div>
+      <div><b>4. Automatise</b> : premier minion + chunk hopper.</div>
+      <div><b>5. Aventure</b> : île de monstres facile → améliore ton équipement.</div>
+      <div><b>6. Business</b> : coffre d'auto-vente, marché, déco. Tu gères ton île 👑</div>
+    </div>
+    <p class="legend">💡 Plan conseillé, pas une règle officielle.</p>
+  </section>
+
+  <section id="checklist">
+    <h2>✅ Ma checklist <span class="time">⏱ à ton rythme</span></h2>
+    <div class="tldr">Coche au fur et à mesure. C'est sauvegardé sur cet appareil.</div>
+    <div><b id="done-count">0 / 0</b> objectifs</div>
+    <div class="bar"><i id="done-bar"></i></div>
+    <label><input type="checkbox" id="c1" data-goto="start"><span>Rejoindre OneBlock Online</span></label>
+    <label><input type="checkbox" id="c2" data-goto="oneblock"><span>Sécuriser le OneBlock avec des blocs autour</span></label>
+    <label><input type="checkbox" id="c3" data-goto="plan"><span>Planter ta première pousse d'arbre</span></label>
+    <label><input type="checkbox" id="c4" data-goto="quetes"><span>Finir une quête journalière</span></label>
+    <label><input type="checkbox" id="c5" data-goto="quetes"><span>Acheter ta première amélioration d'île</span></label>
+    <label><input type="checkbox" id="c6" data-goto="coop"><span>Inviter un ami sur ton île</span></label>
+    <label><input type="checkbox" id="c7" data-goto="minions"><span>Avoir ton premier minion</span></label>
+    <label><input type="checkbox" id="c8" data-goto="minions"><span>Poser un chunk hopper</span></label>
+    <label><input type="checkbox" id="c9" data-goto="combat"><span>Visiter une île de monstres</span></label>
+    <label><input type="checkbox" id="c10" data-goto="combat"><span>Améliorer ton équipement (Bone Forge ou enchantement)</span></label>
+    <label><input type="checkbox" id="c11" data-goto="minions"><span>Poser un coffre d'auto-vente</span></label>
+    <label><input type="checkbox" id="c12" data-goto="eco"><span>Vendre un objet sur le marché</span></label>
+    <label><input type="checkbox" id="c13" data-goto="deco"><span>Poser ton premier meuble</span></label>
+    <label><input type="checkbox" id="c14" data-goto="eco"><span>Participer à un événement serveur</span></label>
+    <label><input type="checkbox" id="c15" data-goto="oneblock"><span>Atteindre la phase 29</span></label>
+    <p><button id="reset" class="ghost">↺ Tout décocher</button></p>
+  </section>
+
+  <section id="faq">
+    <h2>❓ FAQ <span class="time">⏱ 40 s</span></h2>
+    <details><summary>Ça marche sur Java ?</summary><p>Non. C'est sur Minecraft <b>Bedrock</b>, dans l'onglet Serveurs.</p></details>
+    <details><summary>C'est payant ?</summary><p>Il faut Minecraft Bedrock. Le serveur se rejoint depuis l'onglet Serveurs, et les achats (packs en Minecoins) sont optionnels.</p></details>
+    <details><summary>Quelles sont les commandes ?</summary><p>Aucune liste officielle n'est publiée. Tape <b>/</b> dans le chat : Bedrock affiche les commandes disponibles. Regarde aussi les menus du serveur en jeu.</p></details>
+    <details><summary>Je perds mes objets si je meurs ?</summary><p>Ce n'est pas documenté. Teste avec des objets sans valeur avant de risquer ton meilleur équipement.</p></details>
+    <details><summary>Bug, ban, achat qui ne marche pas ?</summary><p>Va sur <a href="https://inpvp.net/oneblockonline" target="_blank" rel="noopener">inpvp.net/oneblockonline</a> : signaler un bug ou un joueur, faire appel d'un ban, support des achats.</p></details>
+  </section>
+
+  <section id="sources">
+    <h2>🔗 Sources <span class="time">⏱ 10 s</span></h2>
+    <ul>
+      <li><a href="https://www.minecraft.net/fr-fr/article/oneblock-online" target="_blank" rel="noopener">Minecraft.net : article officiel OneBlock Online (30/07/2026)</a></li>
+      <li><a href="https://inpvp.net/oneblockonline" target="_blank" rel="noopener">InPvP : page OneBlock Online</a></li>
+    </ul>
+    <p class="legend">Infos vérifiées le 1er novembre 2026. Le serveur évolue : en cas de doute, le jeu a raison.</p>
+  </section>
+</main>
+
+<div id="focusbar">
+  <button id="prev" class="ghost">◀ Avant</button>
+  <span id="pos">1 / 12</span>
+  <button id="nextsec">Suivant ▶</button>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<footer>Wiki de fan, non officiel. Minecraft est une marque de Mojang / Microsoft. OneBlock Online est géré par InPvP.</footer>
+
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+// localStorage peut être bloqué (navigation privée, fichier local) : le site doit marcher sans.
+const store = {
+  get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+const cheers = ['Bien joué ! 🎉', 'Trop fort ! 💪', 'Une de plus ! ⭐', 'Tu gères ! 👑', 'Yes ! 🔥'];
+function toast(t) {
+  const el = $('#toast');
+  el.textContent = t; el.classList.add('on');
+  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('on'), 1800);
+}
+
+// Checklist
+const done = store.get('ob-done', {});
+const boxes = $$('#checklist input[type=checkbox]');
+function refresh() {
+  const n = boxes.filter(b => b.checked).length;
+  $('#done-count').textContent = `${n} / ${boxes.length}`;
+  $('#done-bar').style.width = (100 * n / boxes.length) + '%';
+}
+boxes.forEach(b => {
+  b.checked = !!done[b.id];
+  b.onchange = () => {
+    done[b.id] = b.checked; store.set('ob-done', done); refresh();
+    if (b.checked) toast(cheers[Math.floor(Math.random() * cheers.length)]);
+  };
+});
+$('#reset').onclick = () => {
+  if (!confirm('Tout décocher ?')) return;
+  boxes.forEach(b => { b.checked = false; done[b.id] = false; });
+  store.set('ob-done', done); refresh();
+};
+refresh();
+
+// "Je fais quoi maintenant ?" : premier objectif non coché
+$('#next').onclick = () => {
+  const b = boxes.find(b => !b.checked), msg = $('#next-msg');
+  msg.textContent = '';
+  if (!b) msg.textContent = '🏆 Tout est coché. Tu es une légende du OneBlock !';
+  else {
+    msg.append('👉 Prochain objectif : ');
+    const strong = document.createElement('b'); strong.textContent = b.nextElementSibling.textContent;
+    const a = document.createElement('a'); a.href = '#' + b.dataset.goto; a.textContent = 'Voir comment';
+    msg.append(strong, ' · ', a);
+  }
+  msg.hidden = false;
+  msg.scrollIntoView({ block: 'center' });
+};
+
+// Phase
+let phase = store.get('ob-phase', 1);
+function setPhase(p) {
+  phase = Math.max(1, Math.min(50, p)); // 29 au lancement, marge pour les futures phases
+  store.set('ob-phase', phase);
+  $('#phase').textContent = phase;
+  $('#phase-bar').style.width = Math.min(100, 100 * phase / 29) + '%';
+}
+$('#ph-minus').onclick = () => setPhase(phase - 1);
+$('#ph-plus').onclick = () => { setPhase(phase + 1); if (phase === 29) toast('Phase 29 ! 🏆'); };
+setPhase(phase);
+
+// Mode focus : une section à la fois
+const secs = $$('main > section');
+let cur = 0;
+function show(n) {
+  cur = Math.max(0, Math.min(secs.length - 1, n));
+  secs.forEach((s, k) => s.classList.toggle('current', k === cur));
+  $('#pos').textContent = `${cur + 1} / ${secs.length}`;
+  if (document.body.classList.contains('focus')) secs[cur].scrollIntoView();
+}
+function setFocus(on) {
+  document.body.classList.toggle('focus', on);
+  $('#focus').setAttribute('aria-pressed', on);
+  $('#focus').textContent = on ? '📖 Tout voir' : '🧘 Mode focus';
+  store.set('ob-focus', on);
+  show(cur);
+}
+$('#focus').onclick = () => {
+  if (!document.body.classList.contains('focus')) { $('#q').value = ''; filter(''); }
+  setFocus(!document.body.classList.contains('focus'));
+};
+$('#prev').onclick = () => show(cur - 1);
+$('#nextsec').onclick = () => show(cur + 1);
+addEventListener('hashchange', () => {
+  const k = secs.findIndex(s => '#' + s.id === location.hash);
+  if (k >= 0) show(k);
+});
+setFocus(store.get('ob-focus', false));
+
+// Recherche (sans accents, sans majuscules)
+const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+function filter(v) {
+  const q = norm(v.trim());
+  let hits = 0;
+  secs.forEach(s => { const ok = !q || norm(s.textContent).includes(q); s.hidden = !ok; hits += ok; });
+  $('#nohit').hidden = hits > 0;
+}
+$('#q').oninput = e => { if (e.target.value) setFocus(false); filter(e.target.value); };
+</script>
+</body>
+</html>
